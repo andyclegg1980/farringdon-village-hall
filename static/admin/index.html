@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Manager | Farringdon Village Hall</title>
+  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <script>
+    // Use a GitHub token injected by Cloudflare Pages
+    // This bypasses the GitHub OAuth login since Cloudflare Access handles authentication
+    if (window.CMS_GITHUB_TOKEN) {
+      localStorage.setItem('sveltia-cms.user', JSON.stringify({
+        backendName: 'github',
+        token: window.CMS_GITHUB_TOKEN,
+        login: 'farringdon-cms'
+      }));
+    }
+  </script>
 </head>
 <body>
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>
 </html>

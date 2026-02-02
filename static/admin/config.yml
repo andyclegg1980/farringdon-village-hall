@@ -1,9 +1,7 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/farringdon-village-hall  # Update this!
+  repo: andyclegg1980/farringdon-village-hall
   branch: main
-  base_url: https://farringdon-village-hall.pages.dev  # Update to your Cloudflare Pages URL
-  auth_endpoint: /api/auth
 
 # Publish mode - allows draft/review workflow
 publish_mode: editorial_workflow
@@ -13,8 +11,8 @@ media_folder: static/images
 public_folder: /images
 
 # Site URL for previews
-site_url: https://www.farringdonvillagehall.org
-display_url: https://www.farringdonvillagehall.org
+site_url: https://farringdon-village-hall.pages.dev
+display_url: https://farringdon-village-hall.pages.dev
 
 # Logo for CMS
 logo_url: /images/logo.png
