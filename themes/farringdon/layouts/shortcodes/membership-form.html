@@ -1,0 +1,126 @@
+<form action="https://formspree.io/f/mzdvkrpd" method="POST" class="membership-form">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <select id="title" name="title" required>
+      <option value="">Please select...</option>
+      <option value="Mr">Mr</option>
+      <option value="Mrs">Mrs</option>
+      <option value="Miss">Miss</option>
+      <option value="Ms">Ms</option>
+      <option value="Dr">Dr</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">First Name *</label>
+    <input type="text" id="firstName" name="firstName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name *</label>
+    <input type="text" id="lastName" name="lastName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Telephone Number</label>
+    <input type="tel" id="phone" name="phone">
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address in Farringdon Parish *</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+  </div>
+
+  <div class="form-group form-checkbox">
+    <input type="checkbox" id="consent" name="consent" value="yes" required>
+    <label for="consent">I confirm that I have read and agree to the conditions above, and consent to my data being held by the Charity for membership purposes. *</label>
+  </div>
+
+  <!-- Honeypot field for spam protection -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- Success redirect -->
+  <input type="hidden" name="_next" value="{{ .Site.BaseURL }}membership/thank-you/">
+
+  <!-- Email subject -->
+  <input type="hidden" name="_subject" value="New Membership Application">
+
+  <button type="submit" class="btn btn-primary">Submit Application</button>
+</form>
+
+<style>
+.membership-form {
+  max-width: 500px;
+  margin: 2rem 0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4f7a28;
+  box-shadow: 0 0 0 2px rgba(79, 122, 40, 0.2);
+}
+
+.form-checkbox {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.form-checkbox input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: auto;
+}
+
+.form-checkbox label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #4f7a28;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3f6a1e;
+}
+</style>
