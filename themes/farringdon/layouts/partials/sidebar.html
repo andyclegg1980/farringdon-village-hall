@@ -1,0 +1,35 @@
+<!-- Email Signup Widget -->
+<div class="sidebar-widget">
+    <div class="sidebar-widget-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+        Sign up to our Email Alerts
+    </div>
+    <div class="sidebar-widget-content">
+        <p style="margin: 0; font-size: 0.9rem;">Contact us at <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a> to subscribe to our mailing list.</p>
+    </div>
+</div>
+
+<!-- Latest News Widget -->
+<div class="sidebar-widget">
+    <div class="sidebar-widget-header">
+        Latest News
+    </div>
+    <div class="sidebar-widget-content">
+        {{ $news := where .Site.RegularPages "Section" "news" }}
+        {{ $latestNews := first 3 (sort $news "Date" "desc") }}
+        {{ range $latestNews }}
+        <div class="news-item">
+            <p class="news-item-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </p>
+            <p class="news-item-date">{{ .Date.Format "Monday, 2 January 2006" }}</p>
+        </div>
+        {{ end }}
+        {{ if gt (len $news) 3 }}
+        <a href="{{ "news/" | relURL }}" class="see-all-link">See all</a>
+        {{ end }}
+    </div>
+</div>

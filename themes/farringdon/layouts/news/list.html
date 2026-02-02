@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="news-list-content">
+    <h1>{{ .Title }}</h1>
+
+    {{ .Content }}
+
+    {{ $news := .Pages }}
+    {{ if gt (len $news) 0 }}
+    <ul class="news-list">
+        {{ range $news.ByDate.Reverse }}
+        <li class="news-list-item">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, 2 January 2006" }}</time>
+            {{ if .Summary }}
+            <p>{{ .Summary | truncate 200 }}</p>
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</article>
+{{ end }}

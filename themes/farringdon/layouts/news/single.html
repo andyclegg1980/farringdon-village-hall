@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="news-single">
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, 2 January 2006" }}</time>
+    </p>
+    {{ .Content }}
+
+    <p class="back-link" style="margin-top: 2rem;">
+        <a href="{{ "news/" | relURL }}">&larr; Back to News</a>
+    </p>
+</article>
+{{ end }}

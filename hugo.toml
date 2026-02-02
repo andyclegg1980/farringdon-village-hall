@@ -1,0 +1,137 @@
+baseURL = 'https://www.farringdonvillagehall.org/'
+languageCode = 'en-gb'
+title = 'Farringdon Village Hall'
+theme = 'farringdon'
+
+[params]
+  description = "Farringdon Village Hall Charitable Trust - England & Wales Registered Charity No 1206624"
+  charity_number = "1206624"
+  email = "secretary@farringdonvillagehall.org"
+  address = "Forge Barn, Shirnall Hill, Farringdon, Hampshire, GU34 3EJ"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+    
+  [[menu.main]]
+    name = "About the Charity"
+    url = "/about/"
+    weight = 2
+    
+  [[menu.main]]
+    name = "Constitution"
+    parent = "About the Charity"
+    url = "/about/constitution/"
+    weight = 1
+    
+  [[menu.main]]
+    name = "Trustees"
+    parent = "About the Charity"
+    url = "/about/trustees/"
+    weight = 2
+    
+  [[menu.main]]
+    name = "Archived Trust Documents"
+    parent = "About the Charity"
+    url = "/about/archived-documents/"
+    weight = 3
+    
+  [[menu.main]]
+    name = "Membership"
+    url = "/membership/"
+    weight = 3
+    
+  [[menu.main]]
+    name = "Newsletters"
+    url = "/newsletters/"
+    weight = 4
+    
+  [[menu.main]]
+    name = "2022"
+    parent = "Newsletters"
+    url = "/newsletters/2022/"
+    weight = 1
+    
+  [[menu.main]]
+    name = "2021"
+    parent = "Newsletters"
+    url = "/newsletters/2021/"
+    weight = 2
+    
+  [[menu.main]]
+    name = "Finance"
+    url = "/finance/"
+    weight = 5
+    
+  [[menu.main]]
+    name = "Minutes"
+    url = "/minutes/"
+    weight = 6
+    
+  [[menu.main]]
+    name = "2025"
+    parent = "Minutes"
+    url = "/minutes/2025/"
+    weight = 1
+    
+  [[menu.main]]
+    name = "2023"
+    parent = "Minutes"
+    url = "/minutes/2023/"
+    weight = 2
+    
+  [[menu.main]]
+    name = "2019"
+    parent = "Minutes"
+    url = "/minutes/2019/"
+    weight = 3
+    
+  [[menu.main]]
+    name = "2018"
+    parent = "Minutes"
+    url = "/minutes/2018/"
+    weight = 4
+    
+  [[menu.main]]
+    name = "2017"
+    parent = "Minutes"
+    url = "/minutes/2017/"
+    weight = 5
+    
+  [[menu.main]]
+    name = "Fundraising"
+    url = "/fundraising/"
+    weight = 7
+    
+  [[menu.main]]
+    name = "Planning"
+    url = "/planning/"
+    weight = 8
+    
+  [[menu.main]]
+    name = "Construction"
+    url = "/construction/"
+    weight = 9
+    
+  [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 10
+    
+  [[menu.main]]
+    name = "Q&A"
+    url = "/qa/"
+    weight = 11
+    
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 12
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+

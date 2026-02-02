@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="list-content">
+    <h1>{{ .Title }}</h1>
+
+    {{ .Content }}
+
+    {{ $pages := .Pages }}
+    {{ if gt (len $pages) 0 }}
+    <ul class="page-list">
+        {{ range $pages.ByDate.Reverse }}
+        <li class="page-list-item">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ if .Date }}
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, 2 January 2006" }}</time>
+            {{ end }}
+            {{ if .Description }}
+            <p>{{ .Description }}</p>
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</article>
+{{ end }}

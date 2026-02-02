@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    {{ block "head" . }}{{ end }}
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-banner">
+            <div class="logo-container">
+                <a href="{{ "/" | relURL }}">
+                    <img src="{{ "images/logo.png" | relURL }}" alt="{{ .Site.Title }}" class="site-logo">
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-container">
+                {{ partial "nav.html" . }}
+            </div>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <div class="content-wrapper">
+            <div class="main-content">
+                {{ block "main" . }}{{ end }}
+            </div>
+            <aside class="sidebar">
+                {{ partial "sidebar.html" . }}
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>{{ .Site.Title }} is a registered charity in England and Wales ({{ .Site.Params.charity_number }}). Registered office: {{ .Site.Params.address }} </p>
+               
+                <p><a href="{{ "/privacy/" | relURL }}">Privacy Policy</a></p>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:{{ .Site.Params.email }}" class="email-icon" aria-label="Email us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

@@ -1,0 +1,12 @@
+name = "Farringdon"
+license = "MIT"
+licenselink = "https://github.com/yourname/farringdon/blob/master/LICENSE"
+description = "A theme for Farringdon Village Hall website"
+homepage = "https://www.farringdonvillagehall.org/"
+tags = ["village", "community", "charity"]
+features = ["responsive", "dropdown-menu", "sidebar"]
+min_version = "0.112.0"
+
+[author]
+  name = "Farringdon Village Hall"
+  homepage = "https://www.farringdonvillagehall.org/"
